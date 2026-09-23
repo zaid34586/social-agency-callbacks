@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancy Social Agency - Callbacks</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        h1 { 
+            color: #1a1a2e; 
+            font-size: 2.5rem; 
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle { color: #666; margin-bottom: 2rem; font-size: 1.1rem; }
+        .status { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.5rem;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .status::before { content: "●"; color: #4caf50; font-size: 1.2rem; }
+        .endpoints { 
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .endpoint {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .endpoint:last-child { margin-bottom: 0; }
+        .endpoint-info { display: flex; flex-direction: column; gap: 0.25rem; }
+        .endpoint-method {
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .endpoint-path { font-family: monospace; color: #333; font-size: 0.9rem; }
+        .endpoint-desc { color: #666; font-size: 0.8rem; }
+        .footer { 
+            text-align: center; 
+            color: #888; 
+            font-size: 0.85rem; 
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .links { margin-top: 1rem; }
+        .links a { 
+            color: #667eea; 
+            text-decoration: none; 
+            margin: 0 0.5rem;
+            font-weight: 500;
+        }
+        .links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Nancy Social Agency</h1>
+        <p class="subtitle">AI-powered social media automation for local businesses</p>
+        
+        <div class="status">● System Online - Callbacks Ready</div>
+        
+        <div class="endpoints">
+            <h3 style="margin-bottom: 1rem; color: #333;">Callback Endpoints</h3>
+            
+            <div class="endpoint">
+                <div class="endpoint-info">
+                    <span class="endpoint-method">GET</span>
+                    <span class="endpoint-path">/api/callback/facebook</span>
+                </div>
+                <span class="endpoint-desc">Facebook OAuth callback</span>
+            </div>
+            
+            <div class="endpoint">
+                <div class="endpoint-info">
+                    <span class="endpoint-method">GET</span>
+                    <span class="endpoint-path">/api/callback/instagram</span>
+                </div>
+                <span class="endpoint-desc">Instagram OAuth callback</span>
+            </div>
+            
+            <div class="endpoint">
+                <div class="endpoint-info">
+                    <span class="endpoint-method">GET</span>
+                    <span class="endpoint-path">/api/callback/facebook/deauth</span>
+                </div>
+                <span class="endpoint-desc">User deauthorization handler</span>
+            </div>
+            
+            <div class="endpoint">
+                <div class="endpoint-info">
+                    <span class="endpoint-method">GET</span>
+                    <span class="endpoint-path">/api/callback/facebook/delete</span>
+                </div>
+                <span class="endpoint-desc">GDPR data deletion</span>
+            </div>
+            
+            <div class="endpoint">
+                <div class="endpoint-info">
+                    <span class="endpoint-method">GET</span>
+                    <span class="endpoint-path">/api/health</span>
+                </div>
+                <span class="endpoint-desc">Health check endpoint</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Nancy Social Agency</strong> - AI-powered social media automation</p>
+            <div class="links">
+                <a href="/api/health">Health Check</a>
+                <span>·</span>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <span>·</span>
+                <a href="https://vercel.com" target="_blank">Vercel</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.75rem; color: #999;">
+                Configured for: <strong>agency.rivoxcloud.com</strong> · Powered by Vercel
+            </p>
+        </div>
+    </div>
+</body>
+</html>

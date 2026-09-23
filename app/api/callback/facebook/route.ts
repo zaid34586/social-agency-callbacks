@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const META_APP_ID = process.env.META_APP_ID || '4078557982437644'
-const META_APP_SECRET = process.env.META_APP_SECRET || ''
-const REDIRECT_URI = 'https://agency.rivoxcloud.com/callback/facebook'
+const META_APP_ID = process.env.META_APP_ID || '4664477173787402'
+const META_APP_SECRET = process.env.META_APP_SECRET || '95da2136cbc7162f9b824b1098bf9dbd'
+const REDIRECT_URI = 'https://social-agency-callbacks-jxb3hz0w7-match-mind-ai-s-projects.vercel.app/api/callback/facebook'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     const tokenResp = await fetch(
       `https://graph.facebook.com/v19.0/oauth/access_token?` +
       `client_id=${META_APP_ID}&client_secret=${META_APP_SECRET}` +
-      `&redirect_uri=${encodeURIComponent('https://agency.rivoxcloud.com/callback/facebook')}` +
+      `&redirect_uri=${encodeURIComponent('https://social-agency-callbacks-jxb3hz0w7-match-mind-ai-s-projects.vercel.app/api/callback/facebook')}` +
       `&code=${code}`
     )
     const tokenData = await tokenResp.json()
